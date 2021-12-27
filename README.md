@@ -44,10 +44,10 @@ curl -X POST  -H 'Content-Type: application/json' -d '{"age": 35,"dependents": 2
 
 ## Design
 
-* The API has a single POST interface 'localhost:3000/api/v1', it is versioned to make it easy to support new demands while staying backward
+* The API has a single POST entry point 'localhost:3000/api/v1', it is versioned to make it easy to support new demands while staying backward
   compatible.
 
-* Each incoming request (json object) will first go throw the riskRequestValidatorMiddleWare, which is a middleware function, Making use
+* Each incoming request (json object) will first go through the riskRequestValidatorMiddleWare, which is a middleware function, Making use
   of the simple [node_rules]('https://www.npmjs.com/package/node-rules') module, to evaluate the request and throw an error (400 bad request) if found.
   A list of static evaluation rules is created once when server loads, and when a request arrives the rules engine evaluates it after being wrapped by the
   RiskProfileRequest class that all it does is handling the request body into a formed class object.
