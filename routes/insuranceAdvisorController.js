@@ -1,10 +1,7 @@
 let express = require('express')
 let router = express.Router();
 let RiskProfileRequest = require('../lib/model/RiskProfileRequest')
-const RiskAdvisingHandler = require("../lib/RiskAdvisingHandler");
-const RiskEvaluationRules = require('../lib/rules/RiskEvaluationRules')
-const riskAdvisingHandler = new RiskAdvisingHandler(
-    new RiskEvaluationRules().getRiskEvaluationRules());
+const riskAdvisingHandler = require('../lib/RiskAdvisingHandler');
 
 router.post('/',
     (req, res) => {

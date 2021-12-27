@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const bodyParser = require('body-parser')
 const riskRequestValidator = require('./lib/middleware/riskRequestValidatorMiddleWare')
-let api = require('./routes/insurence_adisor_api')
+let api = require('./routes/insuranceAdvisorController')
 let app = express();
 app.use(bodyParser.json())
 app.use(logger('dev'));
