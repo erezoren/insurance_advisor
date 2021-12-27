@@ -38,16 +38,23 @@ describe('riskRequestValidatorMiddleWare tests', function () {
             "vehicle": {"year": 2018}
           }
         }
+
         let res = {
-          send: (error) => expect(error).to.deep.equal(
-              {success: false, error: 'Age must be present in request and > 0'})
+          status: (code) => {
+            expect(code).to.eq(400)
+            return {
+              json: (error) => {
+                expect(error).to.deep.equal(
+                    {success: false, error: 'Age must be present in request and > 0'})
+              }
+            }
+          }
         }
+
+
         riskRequestValidator(req, res, (arg) => {
          console.log(JSON.stringify(arg))
-          expect(arg["__flags"]["object"]).to.deep.eq({
-                "success": false,
-                "error": "Age must be present in request and > 0"
-              })
+          console.log(arg)
           })
           done();
         });

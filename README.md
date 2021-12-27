@@ -27,11 +27,7 @@
   },
   "income": 0,
   "marital_status": "married",
-  "risk_questions": [
-    1,
-    1,
-    1
-  ],
+  "risk_questions": [1, 1, 1],
   "vehicles": {
     "year": 4
   }
@@ -66,7 +62,7 @@ curl -X POST  -H 'Content-Type: application/json' -d '{"age": 35,"dependents": 2
   calculate the risk assessment response.
   Finally, the calculation result is spread into a structured response (RiskProfileResponse) to be sent back to the caller.
   
-
+  The main design purpose is to maintain the SRP principle so code is testable and changes are simple
 
 #### API Model
 
