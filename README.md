@@ -42,6 +42,11 @@
 curl -X POST  -H 'Content-Type: application/json' -d '{"age": 35,"dependents": 2,"house": {"ownership_status": "owned"},"income": 0,"marital_status": "married","risk_questions": [0, 1, 0],"vehicle": {"year": 2018}}' localhost:3000/api/v1
 ```
 
+###   Tests
+This application uses mocha test framework, with some usage of chai and sinon to assert and stub.
+<br/>
+run tests from commandline by executing <b>'npm test'</b>
+
 ## Design
 
 * The API has a single POST entry point 'localhost:3000/api/v1', it is versioned to make it easy to support new demands while staying backward
