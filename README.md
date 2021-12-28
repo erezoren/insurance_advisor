@@ -55,7 +55,7 @@ run tests from commandline by executing <b>'npm test'</b>
 * Each incoming request (json object) will first go through the riskRequestValidatorMiddleWare, which is a middleware function, Making use
   of the simple [node_rules]('https://www.npmjs.com/package/node-rules') module, to evaluate the request and throw an error (400 bad request) if found.
   A list of static evaluation rules is created once when server loads, and when a request arrives the rules engine evaluates it after being wrapped by the
-  RiskProfileRequest class that all it does is handling the request body into a formed class object.
+  RiskProfileRequest class, that all it does is handling the request body into a formed class object.
   
 * After passing the initial evaluation the router uses RiskAdvisingHandler to perform the risk calculation.
   RiskAdvisingHandler in turn is constructed with a list of simple evaluation rules (EvaluationRule) each one contains to 2 callback functions.
