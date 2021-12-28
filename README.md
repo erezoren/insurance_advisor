@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- Node >= v10.24.1
+- Node >= v14.15.4
 - Terminal or postman installed
 
 ## Usage
